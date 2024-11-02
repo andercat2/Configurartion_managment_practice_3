@@ -1,0 +1,9 @@
+{{!-- Это комментарий для конфигурации веб-сервера --}}
+set port = 8080;
+set timeout = @{port 20 +};
+
+table([
+    name = "WebServer",
+    port = @{port},
+    timeout = @{timeout}
+])

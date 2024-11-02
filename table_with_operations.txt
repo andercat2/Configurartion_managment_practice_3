@@ -1,0 +1,11 @@
+{{!-- Конфигурация для базы данных --}}
+set max_connections = 100;
+set timeout = @{max_connections 10 -};
+set retries = @{timeout 3 + abs};
+
+table([
+    db_name = "MainDB",
+    max_connections = @{max_connections},
+    timeout = @{timeout},
+    retries = @{retries}
+])

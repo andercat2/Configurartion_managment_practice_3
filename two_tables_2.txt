@@ -1,0 +1,16 @@
+{{!-- Настройки сети --}}
+set base_ip = 19216801;
+set subnet_mask = 2552552550;
+
+table([
+    network_name = "LocalNet",
+    ip_address = @{base_ip},
+    subnet = @{subnet_mask},
+    is_active = true
+])
+
+table([
+    network_name = "ExternalNet",
+    ip_address = @{base_ip 1 +},
+    subnet = @{subnet_mask}
+])

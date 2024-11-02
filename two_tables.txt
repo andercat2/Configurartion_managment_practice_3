@@ -1,0 +1,17 @@
+{{!-- Конфигурация системы логирования --}}
+set log_level = 2;
+set log_size = 500;
+set buffer_size = @{log_size 20 -};
+
+table([
+    component = "Logger",
+    level = @{log_level},
+    max_size = @{log_size},
+    buffer = @{buffer_size abs}
+])
+
+table([
+    component = "FileHandler",
+    file_path = "/var/log/app.log",
+    buffer = @{buffer_size}
+])
